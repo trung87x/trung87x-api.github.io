@@ -1,0 +1,20 @@
+<h2>All Blog Posts</h2>
+
+<% if (posts.length === 0) { %>
+  <p>No posts yet.</p>
+<% } %>
+
+<% posts.forEach(post => { %>
+  <div class="post">
+    <h3><%= post.title %></h3>
+    <p><%= post.content %></p>
+    <div class="actions">
+      <a href="/blog/edit/<%= post.id %>">Edit</a>
+      <form action="/blog/delete/<%= post.id %>" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+<% }) %>
+
+<a href="/blog/new" class="create-btn">Create New Post</a>
