@@ -1,5 +1,37 @@
-<form action="/blog/edit/<%= post.id %>" method="POST">
-  <input type="text" name="title" value="<%= post.title %>" required /><br />
-  <textarea name="content" required><%= post.content %></textarea><br />
-  <button type="submit">Update Post</button>
+<h2 class="mb-4">Edit Post</h2>
+
+<form action="/blog/edit/<%= post.id %>" method="POST" class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" id="title" name="title" class="form-control" value="<%= post.title %>" required
+    >
+    <div class="invalid-feedback">Please enter a title.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea id="content" name="content" rows="6" class="form-control" required
+    ><%= post.content %></textarea>
+    <div class="invalid-feedback">Please enter content.</div>
+  </div>
+
+  <button type="submit" class="btn btn-success">Update Post</button>
+  <a href="/blog" class="btn btn-secondary ms-2">Cancel</a>
 </form>
+
+<script>
+  // Bootstrap form validation (optional)
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>

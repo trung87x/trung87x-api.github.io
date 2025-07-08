@@ -3,6 +3,6 @@ const router = express.Router();
 
 const blogRoutes = require('./routes/blogRoutes');
 
-router.use('/blogs', blogRoutes); // => /blog/blogs
+router.use('/blog', blogRoutes); // => /blog
 
 module.exports = router;

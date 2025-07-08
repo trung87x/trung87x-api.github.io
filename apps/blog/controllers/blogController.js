@@ -1,17 +1,17 @@
 const posts = require('../data/posts');
 
 posts.push({ id: '123', title: 'Hello', content: 'World' }); // Example post for testing
+posts.push({ id: '123', title: 'Hello', content: 'World' }); // Example post for testing
+posts.push({ id: '123', title: 'Hello', content: 'World' }); // Example post for testing
+posts.push({ id: '123', title: 'Hello', content: 'World' }); // Example post for testing
 
 exports.showAllPosts = (req, res) => {
-  res.render('blog-index', {
-    title: 'Blog',
-    posts:  posts,
-    layout: 'layouts/layout-blog', // Specify the layout to use
+  res.render('blog-index', { title: 'Blog', posts:  posts, layout: 'layouts/blog-layout'
   });
 };
 
 exports.showNewForm = (req, res) => {
-  res.render('new', { title: 'Create Post' });
+  res.render('blog-new', { title: 'Create Post', layout: 'layouts/blog-layout' });
 };
 
 exports.createPost = (req, res) => {
@@ -24,7 +24,7 @@ exports.createPost = (req, res) => {
 exports.showEditForm = (req, res) => {
   const post = posts.find(p => p.id === req.params.id);
   if (!post) return res.send('Not found');
-  res.render('apps/blog/views/edit', { title: 'Edit Post', post });
+  res.render('blog-edit', { title: 'Edit Post', post, layout: 'layouts/blog-layout' });
 };
 
 exports.updatePost = (req, res) => {

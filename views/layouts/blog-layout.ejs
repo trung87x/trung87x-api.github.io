@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/blog-style.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <%- include('../partials/blog-header') %>
+  <main class="container my-4">
+    <%- body %>
+  </main>
+  <%- include('../partials/blog-footer') %>
+</body>
+</html>

@@ -1,5 +1,5 @@
 exports.showHome = (req, res) => {
-  res.render("home", { title: "Home Page", message: "Welcome to the Home Page!" });
+  res.render("index", { title: "Home Page", message: "Welcome to the Home Page!" });
 };
 
 exports.showAbout = (req, res) => {

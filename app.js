@@ -1,14 +1,12 @@
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
-const path = require('path');
-
 
 // EJS & Middleware
 app.set('view engine', 'ejs'); // Cấu hình EJS làm view engine
 app.set('views', [
-  path.join(__dirname, 'views'), // mặc định
-  path.join(__dirname, 'apps/blog/views'), // thêm blog
+  'views', // mặc định
+  'apps/blog/views', // thêm blog
 ]);
 
 app.use(express.urlencoded({ extended: true }));  // Middleware để phân tích dữ liệu từ form

@@ -1,20 +1,28 @@
-<h2>All Blog Posts</h2>
+<h2 class="mb-4">All Blog Posts</h2>
 
 <% if (posts.length === 0) { %>
-  <p>No posts yet.</p>
+  <div class="alert alert-info">No posts yet. <a href="/blog/new">Create one now</a>.</div>
+<% } else { %>
+  <div class="row">
+    <% posts.forEach(post => { %>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.content %></p>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <a href="/blog/edit/<%= post.id %>" class="btn btn-sm btn-outline-primary">Edit</a>
+            <form action="/blog/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Are you sure?')">
+              <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
 <% } %>
 
-<% posts.forEach(post => { %>
-  <div class="post">
-    <h3><%= post.title %></h3>
-    <p><%= post.content %></p>
-    <div class="actions">
-      <a href="/blog/edit/<%= post.id %>">Edit</a>
-      <form action="/blog/delete/<%= post.id %>" method="POST" style="display:inline;">
-        <button type="submit">Delete</button>
-      </form>
-    </div>
-  </div>
-<% }) %>
-
-<a href="/blog/new" class="create-btn">Create New Post</a>
+<div class="mt-4">
+  <a href="/blog/new" class="btn btn-primary">Create New Post</a>
+</div>
