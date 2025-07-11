@@ -7,6 +7,7 @@ app.set('view engine', 'ejs'); // Cấu hình EJS làm view engine
 app.set('views', [
   'views', // mặc định
   'apps/blog/views', // thêm blog
+  'apps/secret/views' // thêm secret
 ]);
 
 app.use(express.urlencoded({ extended: true }));  // Middleware để phân tích dữ liệu từ form
@@ -35,3 +36,6 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log('Backend server is running on http://localhost:3000');
 });
+
+
+
