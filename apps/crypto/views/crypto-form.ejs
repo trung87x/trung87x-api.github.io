@@ -1,0 +1,16 @@
+<h2>Check Cryptocurrency Price</h2>
+
+<form action="/crypto/check" method="POST" class="mb-3">
+  <label for="symbol" class="form-label">Enter symbol (e.g. BTC-USD):</label>
+  <input
+    type="text"
+    name="symbol"
+    id="symbol"
+    class="form-control"
+    placeholder="e.g. BTC-USD"
+  />
+  <% if (error) { %>
+  <div class="alert alert-danger mt-2"><%= error %></div>
+  <% } %>
+  <button type="submit" class="btn btn-primary mt-2">Check Price</button>
+</form>

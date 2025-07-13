@@ -1,0 +1,16 @@
+<h2>Check Tomorrow's Weather</h2>
+
+<form action="/weather/check" method="POST" class="mb-3">
+  <label for="city" class="form-label">Enter a city:</label>
+  <input
+    type="text"
+    id="city"
+    name="city"
+    class="form-control"
+    placeholder="e.g. Hanoi"
+  />
+  <% if (error) { %>
+  <div class="alert alert-danger mt-2"><%= error %></div>
+  <% } %>
+  <button type="submit" class="btn btn-primary mt-2">Check</button>
+</form>

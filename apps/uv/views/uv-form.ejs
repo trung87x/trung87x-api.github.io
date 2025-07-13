@@ -1,0 +1,32 @@
+<h2 class="mb-4">🔆 Kiểm tra chỉ số UV tại vị trí của bạn</h2>
+
+<form action="/uv/check" method="POST" class="row g-3">
+  <div class="col-md-6">
+    <label for="lat" class="form-label">Latitude:</label>
+    <input
+      type="text"
+      name="lat"
+      id="lat"
+      class="form-control"
+      placeholder="e.g. 10.7769"
+    />
+  </div>
+  <div class="col-md-6">
+    <label for="lng" class="form-label">Longitude:</label>
+    <input
+      type="text"
+      name="lng"
+      id="lng"
+      class="form-control"
+      placeholder="e.g. 106.7009"
+    />
+  </div>
+
+  <% if (error) { %>
+  <div class="alert alert-danger mt-2"><%= error %></div>
+  <% } %>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Check UV</button>
+  </div>
+</form>

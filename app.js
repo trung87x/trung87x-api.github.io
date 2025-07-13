@@ -7,7 +7,12 @@ app.set('view engine', 'ejs'); // Cấu hình EJS làm view engine
 app.set('views', [
   'views', // mặc định
   'apps/blog/views', // thêm blog
-  'apps/secret/views' // thêm secret
+  'apps/secret/views', // thêm secret
+  'apps/joke/views', // thêm joke
+  'apps/weather/views', // thêm weather
+  'apps/crypto/views', // thêm crypto
+  'apps/cocktail/views', // thêm cocktail
+  'apps/uv/views', // thêm UV
 ]);
 
 app.use(express.urlencoded({ extended: true }));  // Middleware để phân tích dữ liệu từ form

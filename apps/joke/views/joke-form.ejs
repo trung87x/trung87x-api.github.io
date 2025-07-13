@@ -1,0 +1,18 @@
+<h2 class="mb-3">Get a Joke</h2>
+
+<form action="/jokes/show" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Your Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="e.g. Trung Đinh"
+    />
+  </div>
+  <% if (error) { %>
+  <div class="alert alert-danger"><%= error %></div>
+  <% } %>
+  <button type="submit" class="btn btn-primary">Get Joke</button>
+</form>

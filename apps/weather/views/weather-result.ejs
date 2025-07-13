@@ -1,0 +1,13 @@
+<h2>Weather Result for <%= city %></h2>
+
+<% if (rain) { %>
+<div class="alert alert-info">
+  ☔ Yes, it will rain tomorrow in <strong><%= city %></strong>.
+</div>
+<% } else { %>
+<div class="alert alert-success">
+  ☀ No, no rain expected in <strong><%= city %></strong> tomorrow.
+</div>
+<% } %>
+
+<a href="/weather" class="btn btn-secondary mt-3">Check another city</a>

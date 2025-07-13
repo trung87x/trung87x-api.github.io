@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <style>
+      body {
+        padding-top: 60px;
+      }
+      footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 0.9em;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/joke-header') %>
+
+    <main class="container"><%- body %></main>
+
+    <%- include('../partials/joke-footer') %>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
